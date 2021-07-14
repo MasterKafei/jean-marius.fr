@@ -1,0 +1,32 @@
+{% block all %}
+<!DOCTYPE html>
+    {% block html_html %}
+        <html lang="fr">
+        {% block html %}
+            {% block head_html %}
+                <head>
+                    {% block head %}
+                        {% block title_html %}
+                            <title>{% block title %}Jean Marius - {% block sub_title %}{% endblock sub_title %}{% endblock title %}</title>
+                        {% endblock title_html %}
+                        {% block favicon %}
+                            <link rel="icon" href="{{ asset('statics/images/favicon.png') }}" type="image/png">
+                        {% endblock favicon %}
+                    {% endblock head %}
+
+                    {% include 'Layout/Base/stylesheets.html.twig' %}
+                    {% include 'Layout/Base/scripts.html.twig' %}
+
+                </head>
+            {% endblock head_html %}
+            {% block body_html %}
+                <body>
+                {% block body %}
+
+                {% endblock body %}
+                </body>
+            {% endblock body_html %}
+        {% endblock html %}
+        </html>
+    {% endblock html_html %}
+{% endblock all %}

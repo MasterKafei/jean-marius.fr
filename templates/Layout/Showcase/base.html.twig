@@ -1,0 +1,43 @@
+{% extends 'Layout/Base/base.html.twig' %}
+
+{% block body_html %}
+    <body>
+    {% set items = [
+        {
+            content: 'home',
+            route: 'app_home_index',
+        },
+        {
+            content: 'contact',
+            route: 'app_home_index',
+        },
+        {
+            content: 'projects',
+            route: 'app_home_index',
+        },
+        {
+            content: 'login',
+            route: 'app_authentication_login',
+            condition: app.user is null,
+        },
+        {
+            content: 'Administration',
+            route: 'app_authentication_login',
+            condition: is_granted('ROLE_ADMIN'),
+        },
+        {
+            content: 'logout',
+            route: 'app_authentication_logout',
+            condition: app.user is not null,
+        },
+    ] %}
+    <div class="flex flex-col h-screen">
+        {% include 'Widget/Navbar/base.html.twig' with {items: items} %}
+        <div class="h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+            {% block body %}
+
+            {% endblock body %}
+        </div>
+    </div>
+    </body>
+{% endblock body_html %}

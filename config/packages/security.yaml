@@ -1,0 +1,29 @@
+security:
+    password_hashers:
+        App\Entity\User:
+            algorithm: auto
+
+    enable_authenticator_manager: true
+
+    providers:
+        user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
+
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            provider: user_provider
+            pattern: ^/
+            logout:
+                path: app_authentication_logout
+                target: app_home_index
+            login_throttling: null
+            custom_authenticators:
+                - App\Security\LoginFormAuthenticator
+    access_control:
+
