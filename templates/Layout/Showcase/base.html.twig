@@ -9,11 +9,15 @@
         },
         {
             content: 'contact',
-            route: 'app_home_index',
+            route: is_granted('ROLE_ADMIN') ? 'app_contact_list' : 'app_contact_request',
         },
         {
             content: 'projects',
-            route: 'app_home_index',
+            route: 'app_project_list',
+        },
+        {
+            content: 'articles',
+            route: 'app_article_list',
         },
         {
             content: 'login',
@@ -21,9 +25,9 @@
             condition: app.user is null,
         },
         {
-            content: 'Administration',
-            route: 'app_authentication_login',
-            condition: is_granted('ROLE_ADMIN'),
+            content: 'Profil',
+            route: 'app_user_profile',
+            condition: app.user is not null,
         },
         {
             content: 'logout',
@@ -33,7 +37,7 @@
     ] %}
     <div class="flex flex-col h-screen">
         {% include 'Widget/Navbar/base.html.twig' with {items: items} %}
-        <div class="h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div class="h-screen bg-gray-50 flex flex-col py-12 sm:px-6 lg:px-8">
             {% block body %}
 
             {% endblock body %}

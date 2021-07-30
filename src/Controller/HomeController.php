@@ -14,7 +14,8 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        $this->getDoctrine()->getRepository(User::class)->findAll();
-        return $this->render('Page/Home/index.html.twig');
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy([]);
+        
+        return $this->render('Page/Home/index.html.twig', ['user' => $user]);
     }
 }

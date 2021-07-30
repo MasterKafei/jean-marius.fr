@@ -1,5 +1,26 @@
 {% extends 'Layout/Showcase/base.html.twig' %}
 
+{% block sub_title %}
+    {% trans from 'title' %}
+        article.list      
+    {% endtrans %}
+{% endblock sub_title %}
+
 {% block body %}
-    {{ dump(articles) }}
+  <div class="relative max-w-7xl mx-auto">
+    <div class="text-center">
+      <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+        {% trans from 'message' %}articles.listing.title{% endtrans %}
+      </h2>
+      <p class="mt-3 max-w-2xl mx-auto text-sm sm:mt-4">
+        {% trans with {'%create_article_link%': path('app_article_create')} from 'message' %}articles.listing.sub_text{% endtrans %}
+      </p>
+    </div>
+    <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      {% for article in articles %}
+        {% include 'Widget/Article/shruken.html.twig' with {article: article} %}
+      {% else %}
+        Encore aucun article écrit
+      {% endfor %}
+    </div>
 {% endblock body %}

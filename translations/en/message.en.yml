@@ -1,0 +1,34 @@
+home:
+    title: Symfony Expert, Self-Employed & Trainer
+    sub_text: Graduated from an Engineer equivalent Master Computer Science & Information Systems
+    owner:
+        full_name: Jean MARIUS
+        role: Web Developpeur & Trainer, Odeven
+
+articles:
+    listing:
+        title: Articles
+        sub_text: >
+            The displayed articles are mainly written by Jean MARIUS.
+            Some articles are retrieved with the <a href="" class="text-blue-700 hover:text-blue-800">Dyosis</a>'s api
+            Additionaly, you can also create articles <a href="%create_article_link%" class="text-blue-700 hover:text-blue-800">here</a> to see how the blogging system works.
+    creation:
+        title: Article
+        sub_text: >
+            You will be the only one to view this article, which will be deleted 5 minutes after its creation.
+    
+user:
+    profile:
+        title: User profile
+        sub_text: >
+            Information relating to your user account is kept for up to 24 hours after your registration date.
+            To facilitate the management of the data in base, I carry out a deletion of the content coming from the public.
+            In addition, this information is only visible to you and to people with your login details.
+            
+contact:
+    request:
+        title: Contact form
+        sub_text: >
+            Your message will be sent to Jean Marius instantly. You will receive a response to your request within 48 hours. 
+            Once the message has been processed, it is kept for a period of one week after the date of viewing. 
+            If you do not receive any response after 48 hours, do not hesitate to resend a message.

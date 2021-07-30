@@ -30,7 +30,7 @@ class UserCreationListener
         return $this;
     }
 
-    public function prePersist(LifecycleEventArgs $args)
+    public function prePersist(User $user, LifecycleEventArgs $args): void
     {
         /** @var User $user */
         $user = $args->getEntity();

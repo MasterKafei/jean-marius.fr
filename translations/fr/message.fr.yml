@@ -1,0 +1,35 @@
+home:
+    title: Expert Symfony, Auto-entrepreneur & Formateur
+    sub_text: Diplomé d'un Master d'Expert informatique & système d'information équivalent ingénieur.
+    owner:
+        full_name: Jean MARIUS
+        role: Développeur Web & Formateur, Odeven
+
+articles:
+    listing:
+        title: Mes articles
+        sub_text: >
+            Les articles affichés sont majoritairement écrit par Jean MARIUS. 
+            Certains articles sont récupéré avec l'api de <a href="https://dyosis.com/" class="text-blue-700 hover:text-blue-800">Dyosis</a>.
+            De plus, vous pouvez aussi créer des articles <a href="%create_article_link%" class="text-blue-700 hover:text-blue-800">ici</a> pour voir le fonctionnement du système de blog 
+
+    creation:
+        title: Article
+        sub_text: >
+          Vous serez le seul à visualiser cet article, qui sera supprimer 5 minutes aprés sa création.
+
+user:
+    profile:
+        title: Profil utilisateur
+        sub_text: >
+            Les informations relatives à votre compte utilisateur sont conservés jusqu'à 24h après votre date d'inscription.
+            Pour faciliter la gestion des données en base, j'effectue une suppression du contenu provenant du public.
+            De plus ces informations sont visibles uniquement de vous et des personnes possédant vos identifiants de connexion.
+
+contact:
+    request:
+        title: Formulaire de contact
+        sub_text: >
+            Votre message sera transmis à Jean Marius instantanément. Vous recevrez une réponse à votre demande sous 48h. 
+            Une fois le message traité, il est conservé pour une durée d'une semaine.
+            Si vous ne recevez aucune réponse après 48h, n'hésitez pas à renvoyer un message.

@@ -1,0 +1,42 @@
+authentication:
+    login: Login
+    username: Username
+    password: Password
+    remember_me: Remember Me
+    forgot_password: I forgot my password
+
+article: 
+    creation:
+        title: Title
+        slug: Slug
+        content: Content
+    showing:
+        title: Title
+
+user:
+    profile:
+        username: Username
+        first_name: First name
+        last_name: Last name
+
+contact:
+    request:
+        first_name: First name
+        last_name: Last name
+        email: Email address
+        subject: Subject
+        content: Content
+    
+    list:
+        name: Name
+        subject: Subject
+        email: Email address
+        status: Status
+        action: Action
+        creation_date: Date sent
+
+        not_read: Not read
+        read: Read
+        
+        show: Display
+        no_message: No message

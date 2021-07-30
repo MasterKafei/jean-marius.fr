@@ -2,8 +2,7 @@
 
 namespace App\Security;
 
-use App\Form\Type\User\LoginType;
-use Symfony\Component\Form\FormBuilderInterface;
+use App\Form\Type\Authentication\LoginType;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

@@ -13,7 +13,9 @@
                             {% if item.condition is not defined or item.condition %}
                                 {% set is_active = item.route == app.request.get('_route') %}
                                 <a href="{{ path(item.route) }}"
-                                   class="{{ is_active ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">{{ item.content|trans({}, 'navbar') }}</a>
+                                   class="{{ is_active ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} px-3 py-2 rounded-md text-sm font-medium">
+                                   {{ item.content|trans({}, 'navbar') }}
+                                </a>
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -43,7 +45,7 @@
     <div class="lg:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
             {% for item in items %}
-                {% if item.condition|default(true) %}
+                {% if item.condition is not defined or item.condition %}
                     {% set is_active = item.route == app.request.get('_route') %}
                     <a href="{{ path(item.route) }}"
                        class="{{ is_active ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">{{ item.content|trans({}, 'navbar') }}</a>

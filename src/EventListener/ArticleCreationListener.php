@@ -10,15 +10,14 @@ class ArticleCreationListener
 {
     private RequestStack $requestStack;
 
+    /** @required */
     public function setRequest(RequestStack $requestStack)
     {
         $this->requestStack = $requestStack;
     }
 
-    public function prePersist(LifecycleEventArgs $args)
+    public function prePersist(Article $article, LifecycleEventArgs $args)
     {
-        /** @var Article $article */
-        $article = $args->getEntity();
         $article
             ->setCreationDate(new \DateTime())
             ->setIp($this->requestStack->getMainRequest()->getClientIp())

@@ -22,9 +22,19 @@ class Article
     private string $title;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", nullable=true)
      */
-    private string $content;
+    private ?string $summary;
+
+    /**
+     * @ORM\OneToOne(targetEntity="File", cascade={"persist", "remove"})
+     */
+    private File $preview;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private array $content;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", cascade={"persist"})
@@ -63,24 +73,48 @@ class Article
         return $this;
     }
 
-    public function getContent(): string
+    public function getSummary(): ?string
+    {
+        return $this->summary;
+    }
+
+    public function setSummary(?string $summary): self
+    {
+        $this->summary = $summary;
+
+        return $this;
+    }
+
+    public function getPreview(): File
+    {
+        return $this->preview;
+    }
+
+    public function setPreview(File $preview)
+    {
+        $this->preview = $preview;
+
+        return $this;
+    }
+
+    public function getContent(): array
     {
         return $this->content;
     }
 
-    public function setContent(string $content): self
+    public function setContent(array $content): self
     {
         $this->content = $content;
 
         return $this;
     }
 
-    public function getAuthor(): User
+    public function getAuthor(): ?User
     {
         return $this->author;
     }
 
-    public function setAuthor(User $author): self
+    public function setAuthor(?User $author): self
     {
         $this->author = $author;
 

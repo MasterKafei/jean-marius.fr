@@ -1,5 +1,29 @@
 {% extends 'Layout/Showcase/base.html.twig' %}
 
+{% block sub_title %}
+    {{ article.title }}
+{% endblock sub_title %}
+
+{% block scripts %}
+  <script>
+    let editorjsConfigs = [{ readOnly: true }];
+  </script>
+{% endblock scripts %}
+
 {% block body %}
-    {{ dump(article) }}
+
+{% embed 'Widget/Card/flat.html.twig' %}
+
+{% block body %}
+
+{{ form_start(form, {'attr': {'class': 'space-y-8 divide-y divide-gray-200'}}) }}
+  <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
+    <div class="sm:border-t sm:border-gray-200 sm:pt-5">
+        {{ form_widget(form.content, {'attr': {'class': 'border-2 border-gray-200'}})}}
+    </div>
+  </div>
+{{ form_end(form) }}
+{% endblock body %}
+{% endembed %}
+
 {% endblock body %}

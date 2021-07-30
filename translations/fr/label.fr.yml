@@ -1,5 +1,42 @@
-login: Connexion
-username: Nom d'utilisateur
-password: Mot de passe
-remember_me: Se souvenir de moi
-forgot_password: Mot de passe oublié
+authentication:
+    login: Connexion
+    username: Nom d'utilisateur
+    password: Mot de passe
+    remember_me: Se souvenir de moi
+    forgot_password: Mot de passe oublié
+
+article: 
+    creation:
+        title: Titre
+        slug: Slug
+        content: Contenu
+    showing:
+        title: Titre
+
+user:
+    profile:
+        username: Nom d'utilisateur
+        first_name: Prénom
+        last_name: Nom de famille
+
+contact:
+    request:
+        first_name: Prénom
+        last_name: Nom de famille
+        email: Adresse email
+        subject: Sujet
+        content: Contenu
+
+    list:
+        name: Nom
+        subject: Sujet
+        email: Adresse email
+        status: Statut
+        action: Action
+        creation_date: Date d'envoi
+
+        not_read: Non lu
+        read: Lu
+        
+        show: Visualiser
+        no_message: Aucun message

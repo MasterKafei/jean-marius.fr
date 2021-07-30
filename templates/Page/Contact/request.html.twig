@@ -1,0 +1,102 @@
+{% extends 'Layout/Showcase/base.html.twig' %}
+
+{% block sub_title %}
+    {% trans from 'title' %}
+        contact.request
+    {% endtrans %}
+{% endblock sub_title %}
+
+{% block body %}
+    {% embed "Widget/Card/flat.html.twig" %}
+        {% block body %}
+            {{ form_start(form)}}
+            <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
+                <div>
+                    <div>
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        {% trans from 'message' %}
+                            contact.request.title
+                        {% endtrans %}
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                        {% trans from 'message' %}
+                            contact.request.sub_text
+                        {% endtrans %}
+                    </p>
+                    </div>
+
+                    <div class="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
+                        <div class="sm:grid sm:grid-cols-2 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                            {{ form_widget(
+                                form.firstName,
+                                {
+                                    'attr': 
+                                    {
+                                        'class': 'flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-md sm:text-sm border-gray-300',
+                                        'placeholder': 'contact.request.first_name'|trans({}, 'label'),
+                                    }
+                                }
+                            ) }}
+                            
+                            {{ form_widget(
+                                form.lastName,
+                                {
+                                    'attr': 
+                                    {
+                                        'class': 'flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-md sm:text-sm border-gray-300',
+                                        'placeholder': 'contact.request.last_name'|trans({}, 'label'),
+                                    }
+                                }
+                            ) }}
+                        </div>
+                        <div>
+                            {{ form_widget(
+                                form.email,
+                                {
+                                    'attr': 
+                                    {
+                                        'class': 'flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-md sm:text-sm border-gray-300',
+                                        'placeholder': 'contact.request.email'|trans({}, 'label'),
+                                    }
+                                }
+                            ) }}
+                        </div>
+                        <div>
+                            {{ form_widget(
+                                form.subject,
+                                {
+                                    'attr': 
+                                    {
+                                        'class': 'flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-md sm:text-sm border-gray-300',
+                                        'placeholder': 'contact.request.subject'|trans({}, 'label'),
+                                    }
+                                }
+                            ) }}
+                        </div>
+                        <div>
+                            {{ form_widget(
+                                form.content,
+                                {
+                                    'attr': 
+                                    {
+                                        'class': 'flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-md sm:text-sm border-gray-300',
+                                        'placeholder': 'contact.request.content'|trans({}, 'label'),
+                                        'rows': 3
+                                    }
+                                }
+                            )}}
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-5">
+                    <div class="flex justify-end">
+                        <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            {{ 'send'|trans({}, 'action') }}    
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        {% endblock %}
+    {% endembed %}
+{% endblock body %}

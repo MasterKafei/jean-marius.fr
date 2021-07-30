@@ -1,0 +1,39 @@
+editorjs:
+    configs:
+        default:
+            initialBlock: paragraph
+            logLevel: ERROR
+            tools:
+                - header
+                - list
+                - image
+            autofocus: true
+
+        read_only:
+            tools:
+                - header
+                - list
+                - image
+    tools:
+        header:
+            url: ~
+            className: Header
+            shortcut: ~
+            inlineToolbar: true
+            toolbox:
+                title: ~
+                icon: ~
+        list:
+            url: ~
+            className: List
+            inlineToolbar: true
+            toolbox:
+              title: ~
+              icon: ~
+        image:
+            className: Image
+            config:
+                endpoints:
+                    byFile: /en/upload_image
+                    byUrl: /en/upload_url
+          

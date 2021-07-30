@@ -1,0 +1,16 @@
+article:
+    create: Création d'article
+    edit: Edition d'article
+    list: Articles
+
+user:
+    profile: Profile
+
+contact:
+    request: Contact
+    list: Messages reçus
+
+project:
+    create: Création de project
+    edit: Edition de project
+    list: Projets

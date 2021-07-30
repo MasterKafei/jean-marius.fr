@@ -51,6 +51,11 @@ class User implements PasswordAuthenticatedUserInterface, LegacyPasswordAuthenti
      */
     private array $roles = ['ROLE_USER'];
 
+    /**
+     * @ORM\OneToOne(targetEntity="File", cascade={"persist"})
+     */
+    private ?File $avatar;
+
     public function getId(): int
     {
         return $this->id;
@@ -150,4 +155,15 @@ class User implements PasswordAuthenticatedUserInterface, LegacyPasswordAuthenti
         return $this->getId();
     }
 
+    public function getAvatar(): ?File
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(File $avatar): self
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
 }
